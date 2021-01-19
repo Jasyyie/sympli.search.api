@@ -30,14 +30,14 @@ namespace Simply.Search.Api
         c.SwaggerDoc("v1", new OpenApiInfo
         {
             Version = "v1",
-            Title = "ToDo API",
-            Description = "A simple example ASP.NET Core Web API",
+            Title = "Sympli Search API",
+            Description = "Find out Search position in google search",
             TermsOfService = new Uri("https://example.com/terms"),
             Contact = new OpenApiContact
             {
                 Name = "Jasmine Kaur",
                 Email = "Jaskhundal@gmail.com",
-                //Url = new Uri("https://www.zedotech.com"),
+
             },
             License = new OpenApiLicense
             {
