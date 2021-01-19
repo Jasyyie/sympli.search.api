@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Simply.Search.Api/bin/Debug/netcoreapp3.1/Simply.Seach.Api.dll",
+            "program": "${workspaceFolder}/Simply.Search.Api/bin/Debug/netcoreapp3.1/Simply.Search.Api.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Simply.Search.Api",
             "stopAtEntry": false,
