@@ -36,3 +36,9 @@ The project is structured to enable extensibility and ease of development. The s
 
 - NUnit tests the service and HttpFactory.
 - Testing HTTPFactory by mocking HttpMessageHandler.
+
+#### Sympli.Search.Client
+
+- It is React App.
+- Do yarn start.
+- update textfields with SearchKey and SearchUrl and Google Search position will be seen.

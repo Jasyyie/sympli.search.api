@@ -1,5 +1,5 @@
-import { Button ,TextField} from '@material-ui/core';
-import React, { useState,useEffect, useCallback } from 'react';
+import { Button ,TextField,FormLabel} from '@material-ui/core';
+import React, { useState, useCallback } from 'react';
 
 
 const SearchPage = () => {
@@ -32,7 +32,7 @@ return(
         value={inputValueSearchKeyword} />
   <TextField id="filled-basic" label="SearchUrl" variant="filled" onChange={onChangeHandlerSearchUrl}
         value={inputValueSearchUrl} />
-    <span>{inputValueChange}</span>
+    <FormLabel>GoogleSearchPosition: {inputValueChange}</FormLabel>
   <Button color="primary" onClick={fetchRequest}>Search</Button>
   </React.Fragment>
 )
