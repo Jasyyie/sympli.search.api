@@ -29,55 +29,9 @@ namespace Simply.Search.Api.Handlers
             {
                 // Logger.log(ex.Message);
             }
-            return null;
+            return "exception occured, we are looking into it";
 
         }
 
-
-
-        // public Task<string> Handle(SearchRequest request, CancellationToken cancellationToken)
-        //         {
-        //             string apiKey = "AIzaSyA827f-ygOXWTxnijDIZBKAeNkGlKCXnYU";
-        //         string cx = "07182cfc5009105d5";
-        //         string query = "e-settlement";
-
-        //         var svc = new Google.Apis.Customsearch.v1.CustomsearchService(new BaseClientService.Initializer { ApiKey = apiKey });
-        //         var listRequest = svc.Cse.List();
-        //         listRequest.Q = query;
-        //             listRequest.Cx = cx;
-
-        //             var lookupResults = new List<Google.Apis.Customsearch.v1.Data.Result>();
-
-        //         var search = listRequest.Execute();
-        //         lookupResults.AddRange(search.Items);
-
-        //             while (search.Queries.NextPage != null)
-        //             {
-        //                 listRequest.Start = search.Queries.NextPage[0].StartIndex;
-        //                 search = listRequest.Execute();
-        //                 lookupResults.AddRange(search.Items);
-        //             }
-
-        //             // for (int i = 0; i <= 10; i++)
-        //             // {
-        //             //     if (search.Queries.NextPage != null)
-        //             //     {
-        //             //         listRequest.Start = search.Queries.NextPage[0].StartIndex;
-        //             //         lookupResults.AddRange(search.Items);
-        //             //     }
-        //             //     else
-        //             //     {
-        //             //         break;
-        //             //     }
-        //             // }
-
-        //             foreach (var result in lookupResults)
-        //             {
-
-
-        //             }
-        // return null;
-
-        //         }
     }
 }

@@ -46,6 +46,13 @@ namespace Simply.Search.Api
             }
         });
     });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsApi",
+                    builder => builder.WithOrigins("http://localhost:3000", "http://localhost:5001")
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+            });
             services.AddMemoryCache();
             services.AddTransient<IGoogleService, GoogleService>();
             services.AddHttpClient();
@@ -68,6 +75,7 @@ namespace Simply.Search.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("CorsApi");
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

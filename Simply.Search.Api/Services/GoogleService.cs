@@ -37,12 +37,13 @@ namespace Simply.Search.Services
             {
                 Url = x.Groups[2].Value,
                 Position = i
-            }
-            ).Where(x => x.Url.Contains(request.SearchUrl, StringComparison.OrdinalIgnoreCase))
-            .ToArray()
-            .Select(x => x.Position)
-            .ToArray();
-            return string.Join(",", resultUrls);
+            })
+            ?.Where(x => x.Url.Contains(request.SearchUrl, StringComparison.OrdinalIgnoreCase))
+            ?.ToArray()
+            ?.Select(x => x.Position)
+            ?.ToArray();
+
+            return resultUrls != null && resultUrls.Any() ? string.Join(",", resultUrls) : "not found";
         }
 
 

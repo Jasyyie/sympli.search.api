@@ -2,9 +2,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Simply.Seacrh.Api.Commands;
 using MediatR;
+using Microsoft.AspNetCore.Cors;
 
 namespace Simply.Search.Api.Controllers
 {
+    [EnableCors("CorsApi")]
     [ApiController]
     [Route("[controller]")]
     public class SearchController : ControllerBase
