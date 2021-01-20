@@ -2,14 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Simply.Seacrh.Api.Commands;
-using Google.Apis.Customsearch.v1;
-using Google.Apis.Services;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text.RegularExpressions;
-using Simply.Search.Api.Models;
-using System.Linq;
 using Simply.Search.Services;
 
 namespace Simply.Search.Api.Handlers
@@ -27,7 +20,8 @@ namespace Simply.Search.Api.Handlers
         {
             try
             {
-                var GoogleSearchResultUrls = await _googleService.GoogleSearchResultUrls(request);
+
+                var GoogleSearchResultUrls = await _googleService.Search(request);
                 return GoogleSearchResultUrls;
             }
 

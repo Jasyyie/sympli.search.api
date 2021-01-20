@@ -46,7 +46,7 @@ namespace Simply.Search.Api.Test
             request.Search = "e-settlement";
 
             // Act
-            var response = await _googleService.GoogleSearchResultUrls(request);
+            var response = await _googleService.Search(request);
 
             // Assert
             Assert.That(response, Is.Not.Null);

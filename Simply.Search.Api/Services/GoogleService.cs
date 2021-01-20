@@ -4,18 +4,27 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Linq;
-
 namespace Simply.Search.Services
 {
     public class GoogleService : IGoogleService
     {
+        private static CacheService<string> _searchCacheService = new CacheService<string>();
         private readonly IHttpClientFactory _clientFactory;
 
         public GoogleService(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
-        public async Task<string> GoogleSearchResultUrls(SearchRequest request)
+
+        public async Task<string> Search(SearchRequest request)
+        {
+            var searchCache =
+            await _searchCacheService.GetOrCreate($"{request.Search}:{request.SearchUrl}", async () => await GoogleSearchResultUrls(request));
+
+            return searchCache;
+
+        }
+        private async Task<string> GoogleSearchResultUrls(SearchRequest request)
         {
             const string SearchUrl = "https://www.google.com/";
             var client = _clientFactory.CreateClient();
@@ -35,6 +44,8 @@ namespace Simply.Search.Services
             .ToArray();
             return string.Join(",", resultUrls);
         }
+
+
     }
 }
 

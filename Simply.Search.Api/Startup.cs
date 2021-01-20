@@ -46,6 +46,7 @@ namespace Simply.Search.Api
             }
         });
     });
+            services.AddMemoryCache();
             services.AddTransient<IGoogleService, GoogleService>();
             services.AddHttpClient();
             services.AddMediatR(Assembly.GetExecutingAssembly());

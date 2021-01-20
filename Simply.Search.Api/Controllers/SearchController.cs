@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Google.Apis.Customsearch.v1;
-using Google.Apis.Services;
 using Simply.Seacrh.Api.Commands;
 using MediatR;
 
